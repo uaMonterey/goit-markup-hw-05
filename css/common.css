@@ -198,26 +198,84 @@ body {
 .site-nav {
   margin-left: 93px;
 }
-.site-nav .link.current {
-  color: var(--accent);
-}
-.site-nav .link:hover,
-.site-nav .link:focus {
-  color: var(--accent);
-}
 
 .nav-list {
   display: flex;
 }
 
+.nav-list .item:not(:last-child) {
+  margin-right: 50px;
+}
+
 .nav-list .link {
-  display: block;
+  position: relative;
+  display: inline-block;
   padding-top: 32px;
   padding-bottom: 32px;
 }
 
-.nav-list .item:not(:last-child) {
-  margin-right: 50px;
+.nav-list .link.current::before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 50%;
+  background-color: var(--accent);
+  border-radius: 0px 2px 2px 0px;
+  left: 50%;
+  bottom: 0;
+}
+
+.nav-list .link.current::after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 4px;
+  width: 50%;
+  background: var(--accent);
+  border-radius: 2px 0px 0px 2px;
+  right: 50%;
+  bottom: 0;
+}
+
+.nav-list .link::before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  border-radius: 0px 2px 2px 0px;
+  left: 50%;
+  bottom: 0;
+}
+
+.nav-list .link::after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 4px;
+  width: 0%;
+  background: var(--accent);
+  transition: width 0.3s ease-in-out;
+  border-radius: 2px 0px 0px 2px;
+  right: 50%;
+  bottom: 0;
+}
+
+.nav-list .link:hover::before,
+.nav-list .link:focus::before {
+  width: 50%;
+}
+
+.nav-list .link:hover::after,
+.nav-list .link:focus::after {
+  width: 50%;
+}
+
+.nav-list .link.current {
+  color: var(--accent);
 }
 
 .header-contacts {

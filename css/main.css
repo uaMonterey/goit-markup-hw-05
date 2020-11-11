@@ -57,6 +57,26 @@
   color: var(--white);
 }
 
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1600px;
+  height: 1024px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+
+  height: 581px;
+  width: 528px;
+
+  background-color: #ffffff;
+}
 /* Стилизация секции Особенности  */
 
 .features .list {
@@ -136,8 +156,32 @@
 }
 
 .works .item {
+  position: relative;
   margin-left: 30px;
   flex-basis: calc(100% / 3 - 30px);
+}
+
+.works-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 370px;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+}
+
+.works-thumb {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: var(--white);
 }
 
 /* Стилизация секции Наша команда */

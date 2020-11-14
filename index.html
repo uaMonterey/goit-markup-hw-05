@@ -63,7 +63,7 @@
           Эфетивные решения <br />
           для вашего бизнеса
         </h1>
-        <button class="button" href="">Заказать услугу</button>
+        <button data-modal-open class="button" href="">Заказать услугу</button>
       </section>
 
       <!--Особенности-->
@@ -514,20 +514,20 @@
         </div>
       </div>
     </footer>
-    <!--MODAL WINDOW + OVERLAY START-->
 
-    <div class="backdrop is-hidden">
+    <!--MODAL WINDOW + OVERLAY START-->
+    <div data-modal class="backdrop is-hidden">
       <div class="modal">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut pariatur error, ex soluta fugit dolorem
-          similique dolor sequi. Reprehenderit, necessitatibus! Repellat debitis maxime earum enim quod quasi esse
-          laborum ipsum quisquam quos libero nisi, molestias dolore officiis ducimus labore aperiam, reprehenderit quam
-          accusamus adipisci voluptatum facere quia iusto quae. Fuga!
-        </p>
-        <button class="btn-modal">close</button>
+        <button class="modal-btn" data-modal-close>
+          <svg class="btn-close" width="11" height="11">
+            <use href="./img-hw-4/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
       </div>
     </div>
-
     <!--MODAL WINDOW + OVERLAY END-->
+
+    <!--JavaScript-->
+    <script src="./js/modal.js"></script>
   </body>
 </html>
